@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --white : #fff;
+    --black:#1c2b2d;
+    --blue:#31326f;
+    --color-primary:#9d0191;
+    --light-blue:#005490;
+    --color-sec:#db6400;
+    --gray:#eee;
+    --dark-gray:#222831;
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: 'open Sans',sans-serif;
+}
+
+p{
+    font-size: 1.6rem;
+    line-height:1.5;
+}
+
+.container{
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+img{
+    width: 100%;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+}
+
+.instructions{
+    width: 30%;
+    font-size: 1.6rem;
+    background-color: var(--black);
+    color: #eee;
+    height: 100vh;
+    padding-top: 2rem;
+}
+
+.instructions h2{
+    font-size: 3.5rem;
+    color: var(--color-sec);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.instructions h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 25%;
+    height: 2px;
+    background-color: #eee;
+}
+
+.instructions p{
+    padding-bottom: 5px;
+}
+
+.instructions ol{
+    padding: 10px 0 0 1.5rem;
+}
+
+.instructions ol a{
+    color: var(--color-sec);
+    text-decoration: none;
+}
+
+.download-link{
+    width: 70%;
+    padding-top: 5rem;
+}
+
+.download-link section{
+    border: 2px solid var(--color-primary);
+    border-radius: 0 0 5px 5px;
+}
+
+main h1{
+    color: var(--color-primary);
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 5rem;
+    display: block;
+    padding-bottom: 1rem;
+}
+
+main input[type = radio]{
+    display: none;
+}
+
+main nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #eee;
+    padding: 5px;
+    position: relative;
+    z-index: 1;
+    background-color: #eee;
+}
+
+main nav label{
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 1rem;
+    color: var(--dark-gray);
+    cursor: pointer;
+    position: relative;
+}
+
+main nav label i{
+    padding: 5px;
+    color: var(--color-sec);
+}
+.slide{
+    position: absolute;
+    top: 0;
+    left: 2.5%;
+    width: 26%;
+    height: 100%;
+    background-color: var(--color-primary);
+    z-index: -1;
+    transition: all .5s;
+}
+
+#audio:checked ~ nav .slide{
+    width: 27%;
+    left: 31%;
+}
+
+#video:checked ~ nav .slide{
+    width: 36%;
+    left: 62%;
+}
+
+#paste:checked ~ nav .paste,
+#audio:checked ~ nav .audio,
+#video:checked ~ nav .video{
+    color: white;
+}
+
+section .content{
+    display: none;
+}
+
+#paste:checked ~ section .content-link{
+    display: block;
+}
+#audio:checked ~ section .content-audio{
+    display: block;
+}
+#video:checked ~ section .content-video{
+    display: block;
+}
+
+section .content{
+    margin: 3rem auto;
+    text-align: center;
+}
+.content > i{
+    font-size: 3rem;
+    margin: 1rem;
+    border: 3px solid;
+    color: var(--color-sec);
+    padding: 1.5rem;
+    border-radius: 5rem;
+}
+
+.content h2{
+    font-size: 2.5rem;
+    line-height: 2;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.content p{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: gray;
+}
+
+.content form{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+ }
+
+ .content form label{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+ }
+ .content form label i{
+    position: absolute;
+    left: 2%;
+    top: 18%;
+    font-size: 2.3rem;
+    color: var(--color-sec);
+ }
+ .content form label input{
+    width: 100%;
+    padding: 1.5rem 5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border: none;
+    border-bottom: 3px solid var(--dark-gray);
+    margin-bottom: 2rem;
+    border-radius: 12px 0 12px 0;
+    background-color: var(--gray);
+    display: block;
+    outline: none;
+    color: var(--dark-gray);
+    transition: all .3s;
+ }
+
+.content form label input:focus:invalid{
+    border-bottom: 3px solid var(--color-sec);
+}
+
+.content form label input:valid{
+    border-bottom: 3px solid green;
+    background-color: #e8f0f3;
+}
+
+::placeholder{
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+}
+
+.content form button{
+    padding: 1.2rem;
+    outline: none;
+    border: none;
+    background-color: var(--color-sec);
+    font-size: 1.8rem;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.content form button:hover{
+    background-color: var(--color-primary);
+}
+
+.embed-code{
+    position: relative;
+    font-size: 1.6rem;
+}
+
+.content form textarea{
+    width: 100%;
+    height: 10rem;
+    outline: none;
+    font-size: 1.7rem;
+    font-family: inherit;
+    color: var(--dark-gray);
+    padding: 1rem;
+}
+
+.content form span{
+    position: absolute;
+    background-color: var(--color-primary);
+    color: var(--white);
+    padding: 8px 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    bottom: 3.7%;
+    right: 0;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.content form span:hover{
+    font-size: 1.8rem;
+}
